@@ -47,8 +47,8 @@ const AboutSection = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               My journey in tech started with curiosity and has evolved into a deep commitment 
-              to continuous learning. I specialize in <span className="text-primary">React</span>, 
-              <span className="text-primary"> Node.js</span>, and modern JavaScript ecosystems, 
+              to continuous learning. I specialize in <span className="text-primary">Angular JS</span>, 
+              <span className="text-primary"> Java Spring Boot </span> , modern JavaScript ecosystems and strong  <span className="text-primary">React JS</span> foundation
               always staying up-to-date with industry trends.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">

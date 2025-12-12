@@ -63,7 +63,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium text-foreground">akhil@example.com</p>
+                    <p className="font-medium text-foreground">palukuriakhil1@gmail.com</p>
                   </div>
                 </a>
 
@@ -103,7 +103,7 @@ const ContactSection = () => {
                   <span className="font-medium">LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/2110030166Akhil"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-300"

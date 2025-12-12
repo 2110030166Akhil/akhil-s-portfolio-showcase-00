@@ -1,15 +1,13 @@
 const skills = [
-  { name: "React", level: 90, category: "Frontend" },
+  { name: "Angular JS", level: 95, category: "Frontend" },
+  { name: "React JS", level: 50, category: "Frontend" },
   { name: "TypeScript", level: 85, category: "Frontend" },
   { name: "JavaScript", level: 95, category: "Frontend" },
   { name: "HTML/CSS", level: 90, category: "Frontend" },
-  { name: "Tailwind CSS", level: 88, category: "Frontend" },
-  { name: "Node.js", level: 80, category: "Backend" },
-  { name: "Python", level: 75, category: "Backend" },
+  { name: "Bootstrap", level: 90, category: "Frontend" },
+  { name: "Java Spring Boot", level: 80, category: "Backend" },
   { name: "MongoDB", level: 78, category: "Backend" },
-  { name: "PostgreSQL", level: 72, category: "Backend" },
   { name: "Git", level: 85, category: "Tools" },
-  { name: "Docker", level: 65, category: "Tools" },
   { name: "AWS", level: 60, category: "Tools" },
 ];
 
@@ -72,7 +70,7 @@ const SkillsSection = () => {
         <div className="mt-16">
           <h3 className="text-xl font-semibold mb-6 text-center">Also familiar with</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {["REST APIs", "GraphQL", "Redux", "Next.js", "Express.js", "Firebase", "Figma", "Jest", "CI/CD", "Agile/Scrum"].map(
+            {["REST APIs" , "Swagger" , "Firebase", "Figma", "CI/CD", "Agile/Scrum" , "DSA" , "C" , "Python" ].map(
               (skill) => (
                 <span
                   key={skill}

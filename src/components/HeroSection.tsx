@@ -11,13 +11,7 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-[128px] animate-float animation-delay-300" />
 
       <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col items-center text-center">
-          {/* Greeting */}
-          <div className="opacity-0 animate-fade-up">
-            <span className="inline-block px-4 py-2 rounded-full glass-card text-primary text-sm font-mono mb-6">
-              👋 Welcome to my portfolio
-            </span>
-          </div>
+        <div className="flex flex-col items-center text-center">          
 
           {/* Name */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 opacity-0 animate-fade-up animation-delay-100">
@@ -28,15 +22,13 @@ const HeroSection = () => {
           {/* Title */}
           <div className="opacity-0 animate-fade-up animation-delay-200">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 font-light">
-              <span className="text-foreground font-medium">Software Developer</span>{" "}
-              crafting digital experiences
+              <span className="text-foreground font-medium">a Software Developer</span>{" "}
             </h2>
           </div>
 
           {/* Description */}
           <p className="text-muted-foreground max-w-2xl text-lg mb-10 opacity-0 animate-fade-up animation-delay-300">
-            Passionate about building scalable web applications and creating
-            seamless user experiences. I turn ideas into elegant, functional code.
+            passionate about building scalable web applications and delivering exceptional user experiences. I enjoy turning concepts into elegant, functional, and impactful digital solutions through thoughtful design and efficient code.
           </p>
 
           {/* CTA Buttons */}
@@ -67,7 +59,7 @@ const HeroSection = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/2110030166Akhi"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg glass-card text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300"
@@ -76,7 +68,7 @@ const HeroSection = () => {
               <Github size={24} />
             </a>
             <a
-              href="mailto:akhil@example.com"
+              href="mailto:palukuriakhil1@gmail.com"
               className="p-3 rounded-lg glass-card text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300"
               aria-label="Email"
             >
@@ -86,7 +78,7 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in animation-delay-600">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in animation-delay-600">
           <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors">
             <span className="text-sm mb-2">Scroll Down</span>
             <ChevronDown className="animate-bounce" size={20} />
