@@ -4,7 +4,7 @@ const experience = [
     {
         title: "Software Developer",
         company: "Proficon Labs",
-        period: "2023 - Present",
+        period: "July 2025 - Present",
         description: [
             "Developed and maintained responsive web applications using Angular, JavaScript, HTML, and CSS.",
             "Integrated RESTful APIs built with Java Spring Boot and documented using Swagger.",
@@ -16,8 +16,8 @@ const experience = [
     },
     {
         title: "Front End Developer Intern",
-        company: "Proficom Labs",
-        period: "2022 - 2023",
+        company: "Proficon Labs",
+        period: "July 2024 - July 2025",
         description: [
             "Assisted in building and styling responsive UIs using Angular, JavaScript, HTML, and CSS.",
             "Collaborated with developers to integrate frontend components with REST APIs.",
