@@ -2,52 +2,46 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Simpo.ai",
     description:
-      "A full-stack e-commerce solution with product management, cart functionality, and secure payment integration using Stripe.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      "An all-in-one business platform powered by AI agents that handle sales follow-ups, marketing, planning, loyalty, and customer engagement. Features include Website Builder, CRM & Sales, E-Commerce, People Management, Work Management, and more. Trusted by over 3,000 businesses worldwide.",
+    tags: ["Angular", "TypeScript", "AI Agents", "CRM", "E-Commerce"],
+    github: "#",
+    live: "https://simpo.ai/",
+    featured: true,
+  },
+  {
+    title: "Food Delivery Website",
+    description:
+      "A fully responsive food delivery web application with dynamic menu listings, cart management, and order placement with real-time updates through RESTful API integration. Features clean UI, reactive forms, routing, and component-based architecture.",
+    tags: ["Angular", "TypeScript", "HTML", "CSS", "REST API"],
     github: "#",
     live: "#",
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Health Care Website",
     description:
-      "A collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    tags: ["React", "TypeScript", "Firebase", "Tailwind"],
-    github: "#",
-    live: "#",
-    featured: true,
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-    tags: ["React", "OpenWeather API", "Chart.js"],
-    github: "#",
-    live: "#",
-    featured: true,
-  },
-  {
-    title: "Portfolio Website",
-    description: "A modern developer portfolio with smooth animations and dark theme.",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
+      "A user-friendly health care website that allows users to find information about nearby COVID-19 vaccination centers by entering their location PIN code and preferred date. Uses Fetch API to retrieve real-time data from Government of India APIs.",
+    tags: ["HTML", "CSS", "JavaScript", "Fetch API"],
     github: "#",
     live: "#",
     featured: false,
   },
   {
-    title: "Blog Platform",
-    description: "A content management system with markdown support and SEO optimization.",
-    tags: ["Next.js", "MDX", "PostgreSQL"],
+    title: "Spam or Ham Email Classification",
+    description:
+      "A machine learning model to classify emails as spam or ham. Performed data preprocessing, feature extraction, and model evaluation to achieve reliable classification accuracy.",
+    tags: ["R", "Machine Learning", "Data Analysis"],
     github: "#",
     live: "#",
     featured: false,
   },
   {
-    title: "Chat Application",
-    description: "Real-time chat app with WebSocket connections and message encryption.",
-    tags: ["React", "Socket.io", "Node.js"],
+    title: "Sentiment Analysis on Amazon Dataset",
+    description:
+      "Sentiment analysis on an Amazon product review dataset using natural language processing techniques and machine learning algorithms to analyze and classify customer sentiments.",
+    tags: ["R", "NLP", "Machine Learning"],
     github: "#",
     live: "#",
     featured: false,
@@ -107,24 +101,28 @@ const ProjectsSection = () => {
 
                 {/* Links */}
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={18} />
-                    <span className="text-sm">Live Demo</span>
-                  </a>
+                  {project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={18} />
+                      <span className="text-sm">Code</span>
+                    </a>
+                  )}
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink size={18} />
+                      <span className="text-sm">Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -142,22 +140,26 @@ const ProjectsSection = () => {
               <div className="flex justify-between items-start mb-4">
                 <Folder className="text-primary" size={32} />
                 <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={18} />
-                  </a>
-                  <a
-                    href={project.live}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={18} />
-                  </a>
+                  {project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={18} />
+                    </a>
+                  )}
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
                 </div>
               </div>
               <h4 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
