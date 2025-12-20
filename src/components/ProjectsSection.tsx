@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { ExternalLink, Github, Folder, Star } from "lucide-react";
 
 const projects = [
   {
@@ -53,76 +53,89 @@ const ProjectsSection = () => {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-28 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/3 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[100px]" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-neon-cyan/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-neon-pink/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-mono text-sm">// My Work</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-            Featured <span className="gradient-text">Projects</span>
+        <div className="text-center mb-20">
+          <span className="inline-block px-4 py-1.5 rounded-full glass-cyber text-neon-cyan font-display text-xs uppercase tracking-widest mb-4">
+            // My Work
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Featured{" "}
+            <span className="text-gradient-cyber">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink mx-auto rounded-full" />
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-6 mb-16">
+        {/* Featured Projects with 3D cards */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-20 perspective-1000">
           {featuredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="glass-card p-8 group hover:border-primary/50 transition-all duration-500 hover:glow-primary"
+              className="card-3d group"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Project number */}
-              <span className="text-6xl font-bold text-primary/10 absolute top-4 right-6 group-hover:text-primary/20 transition-colors">
-                0{index + 1}
-              </span>
-
-              <div className="relative">
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs font-mono rounded-md bg-secondary text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div className="card-3d-inner glass-cyber p-8 h-full relative overflow-hidden">
+                {/* Featured badge */}
+                <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-neon-purple/20 text-neon-purple text-xs font-display">
+                  <Star size={12} className="fill-current" />
+                  Featured
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-4">
-                  {project.github !== "#" && (
-                    <a
-                      href={project.github}
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github size={18} />
-                      <span className="text-sm">Code</span>
-                    </a>
-                  )}
-                  {project.live !== "#" && (
-                    <a
-                      href={project.live}
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={18} />
-                      <span className="text-sm">Live Demo</span>
-                    </a>
-                  )}
+                {/* Project number with glow */}
+                <span className="absolute -top-4 -left-2 text-[120px] font-display font-black text-neon-cyan/5 group-hover:text-neon-cyan/10 transition-colors duration-500 pointer-events-none">
+                  0{index + 1}
+                </span>
+
+                <div className="relative pt-8">
+                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-neon-cyan transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Tags with glow on hover */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 text-xs font-display rounded-lg bg-muted/50 text-neon-cyan border border-neon-cyan/20 hover:border-neon-cyan/50 hover:glow-primary transition-all duration-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex gap-4">
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        className="flex items-center gap-2 text-muted-foreground hover:text-neon-cyan transition-colors group/link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={18} />
+                        <span className="text-sm font-medium group-hover/link:underline">Code</span>
+                      </a>
+                    )}
+                    {project.live !== "#" && (
+                      <a
+                        href={project.live}
+                        className="flex items-center gap-2 text-muted-foreground hover:text-neon-purple transition-colors group/link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={18} />
+                        <span className="text-sm font-medium group-hover/link:underline">Live Demo</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,48 +143,55 @@ const ProjectsSection = () => {
         </div>
 
         {/* Other Projects */}
-        <h3 className="text-xl font-semibold mb-8 text-center">Other Noteworthy Projects</h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {otherProjects.map((project) => (
+        <h3 className="text-2xl font-display font-bold mb-10 text-center">
+          Other Noteworthy Projects
+        </h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
+          {otherProjects.map((project, index) => (
             <div
               key={project.title}
-              className="glass-card p-6 group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+              className="card-3d group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex justify-between items-start mb-4">
-                <Folder className="text-primary" size={32} />
-                <div className="flex gap-3">
-                  {project.github !== "#" && (
-                    <a
-                      href={project.github}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github size={18} />
-                    </a>
-                  )}
-                  {project.live !== "#" && (
-                    <a
-                      href={project.live}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  )}
+              <div className="card-3d-inner glass-cyber p-6 h-full">
+                <div className="flex justify-between items-start mb-5">
+                  <div className="p-3 rounded-xl bg-neon-cyan/10 text-neon-cyan group-hover:animate-pulse">
+                    <Folder size={28} />
+                  </div>
+                  <div className="flex gap-3">
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        className="text-muted-foreground hover:text-neon-cyan transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={18} />
+                      </a>
+                    )}
+                    {project.live !== "#" && (
+                      <a
+                        href={project.live}
+                        className="text-muted-foreground hover:text-neon-purple transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <h4 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h4>
-              <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.slice(0, 3).map((tag) => (
-                  <span key={tag} className="text-xs text-muted-foreground font-mono">
-                    {tag}
-                  </span>
-                ))}
+                <h4 className="font-display font-bold text-lg mb-3 group-hover:text-neon-cyan transition-colors">
+                  {project.title}
+                </h4>
+                <p className="text-muted-foreground text-sm mb-5 line-clamp-3">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="text-xs text-neon-purple/80 font-display">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
