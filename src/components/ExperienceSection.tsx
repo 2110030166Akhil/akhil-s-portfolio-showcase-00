@@ -30,87 +30,70 @@ const experience = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-28 relative overflow-hidden">
+    <section id="experience" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[150px]" />
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-neon-cyan/10 rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full glass-cyber text-neon-cyan font-display text-xs uppercase tracking-widest mb-4">
-            // Experience
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className="text-center mb-16">
+          <span className="section-badge mb-4">Experience</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mt-4 mb-4">
             My{" "}
-            <span className="text-gradient-cyber">Work Experience</span>
+            <span className="gradient-text">Work Experience</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink mx-auto rounded-full" />
         </div>
 
         {/* Timeline */}
-        <div className="relative max-w-5xl mx-auto perspective-1000">
-          {/* Timeline line with glow */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full">
-            <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-pink rounded-full" />
-            <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-pink rounded-full blur-sm" />
-          </div>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Timeline line */}
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-primary/50 to-transparent" />
 
           {experience.map((exp, index) => (
             <div 
               key={index}
-              className={`relative flex flex-col md:flex-row items-start mb-16 ${
+              className={`relative flex flex-col md:flex-row items-start mb-12 ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
-              {/* Timeline dot with pulse */}
-              <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 z-20">
-                <div className="relative">
-                  <div className="w-5 h-5 bg-neon-cyan rounded-full border-4 border-background" />
-                  <div className="absolute inset-0 bg-neon-cyan rounded-full animate-ping opacity-30" />
-                </div>
+              {/* Timeline dot */}
+              <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 z-10">
+                <div className="w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg" />
               </div>
               
-              {/* Content card with 3D */}
-              <div className={`ml-10 md:ml-0 md:w-[45%] ${
-                index % 2 === 0 ? 'md:ml-auto md:pl-12' : 'md:mr-auto md:pr-12'
+              {/* Content card */}
+              <div className={`ml-8 md:ml-0 md:w-[45%] ${
+                index % 2 === 0 ? 'md:ml-auto md:pl-10' : 'md:mr-auto md:pr-10'
               }`}>
-                <div 
-                  className="card-3d group"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="card-3d-inner glass-cyber p-8">
-                    {/* Period badge */}
-                    <div className="flex items-center gap-2 mb-5">
-                      <Calendar size={14} className="text-neon-cyan" />
-                      <span className="text-xs font-display font-bold text-neon-cyan uppercase tracking-wider">
-                        {exp.period}
-                      </span>
-                    </div>
-                    
-                    {/* Icon and title */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 rounded-xl bg-neon-purple/20 text-neon-purple group-hover:animate-pulse">
-                        <Briefcase size={24} />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-display font-bold group-hover:text-neon-cyan transition-colors">
-                          {exp.title}
-                        </h3>
-                        <p className="text-neon-purple font-medium">{exp.company}</p>
-                      </div>
-                    </div>
-                    
-                    {/* Description */}
-                    <ul className="text-muted-foreground space-y-3 text-sm">
-                      {exp.description.map((desc, i) => (
-                        <li key={i} className="flex items-start gap-3 group/item">
-                          <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2 group-hover/item:animate-pulse" />
-                          <span className="group-hover/item:text-foreground transition-colors">{desc}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div className="glass-card p-6">
+                  {/* Period badge */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <Calendar size={14} className="text-primary" />
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                      {exp.period}
+                    </span>
                   </div>
+                  
+                  {/* Icon and title */}
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="p-2 rounded-xl bg-accent text-primary">
+                      <Briefcase size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-display font-semibold">{exp.title}</h3>
+                      <p className="text-primary text-sm font-medium">{exp.company}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Description */}
+                  <ul className="text-muted-foreground space-y-2 text-sm">
+                    {exp.description.map((desc, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        <span>{desc}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
