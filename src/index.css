@@ -4,98 +4,57 @@
 
 @layer base {
   :root {
-    /* Clean Lavender Theme - Light & Elegant */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 10%;
+    /* Dark Slate + Muted Purple */
+    --background: 225 15% 11%;
+    --foreground: 220 20% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card: 225 15% 15%;
+    --card-foreground: 220 20% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover: 225 15% 15%;
+    --popover-foreground: 220 20% 92%;
 
-    --primary: 270 60% 65%;
+    --primary: 262 55% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 30% 96%;
-    --secondary-foreground: 270 60% 50%;
+    --secondary: 225 12% 20%;
+    --secondary-foreground: 220 18% 85%;
 
-    --muted: 270 20% 96%;
-    --muted-foreground: 240 10% 50%;
+    --muted: 225 12% 22%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 270 50% 95%;
-    --accent-foreground: 270 60% 50%;
+    --accent: ;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 65% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 90%;
-    --input: 270 20% 96%;
-    --ring: 270 60% 65%;
+    --border: 225 12% 24%;
+    --input: 225 12% 22%;
+    --ring: 262 55% 60%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Theme Colors */
-    --lavender: 270 60% 65%;
-    --lavender-light: 270 60% 95%;
-    --lavender-dark: 270 60% 45%;
-    --purple-soft: 280 50% 70%;
-    --pink-soft: 320 50% 75%;
+    --lavender: 262 55% 60%;
+    --lavender-light: 262 40% 28%;
+    --lavender-dark: 262 55% 45%;
+    --purple-soft: 262 45% 50%;
+    --pink-soft: 260 30% 65%;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 10% 10%;
-    --sidebar-primary: 270 60% 65%;
+    --sidebar-background: 225 15% 9%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 262 55% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 270 50% 95%;
-    --sidebar-accent-foreground: 270 60% 50%;
-    --sidebar-border: 270 20% 90%;
-    --sidebar-ring: 270 60% 65%;
+    --sidebar-accent: 225 12% 18%;
+    --sidebar-accent-foreground: 220 18% 85%;
+    --sidebar-border: 225 12% 22%;
+    --sidebar-ring: 262 55% 60%;
   }
 
   .dark {
-    --background: 240 15% 8%;
-    --foreground: 0 0% 95%;
-
-    --card: 240 15% 12%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 240 15% 12%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 270 60% 70%;
-    --primary-foreground: 240 15% 8%;
-
-    --secondary: 240 15% 18%;
-    --secondary-foreground: 270 60% 80%;
-
-    --muted: 240 15% 20%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 240 15% 18%;
-    --accent-foreground: 270 60% 80%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 240 15% 20%;
-    --input: 240 15% 18%;
-    --ring: 270 60% 70%;
-
-    --lavender: 270 60% 70%;
-    --lavender-light: 270 40% 25%;
-    --lavender-dark: 270 60% 60%;
-    --purple-soft: 280 50% 60%;
-    --pink-soft: 320 50% 65%;
-
-    --sidebar-background: 240 15% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 270 60% 70%;
-    --sidebar-primary-foreground: 240 15% 8%;
-    --sidebar-accent: 240 15% 18%;
-    --sidebar-accent-foreground: 270 60% 80%;
-    --sidebar-border: 240 15% 20%;
-    --sidebar-ring: 270 60% 70%;
+    /* Dark-first theme: same values */
   }
 
   * {
@@ -111,127 +70,97 @@
   }
 
   ::selection {
-    @apply bg-primary/20 text-foreground;
+    @apply bg-primary/25 text-foreground;
   }
 }
 
 @layer components {
-  /* Soft Glass Card */
+  /* Cards */
   .glass-card {
-    @apply relative overflow-hidden rounded-2xl bg-card;
+    @apply relative rounded-2xl bg-card;
     border: 1px solid hsl(var(--border));
-    box-shadow: 
-      0 4px 6px -1px hsl(var(--lavender) / 0.05),
-      0 10px 40px -15px hsl(var(--lavender) / 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 14px 32px -20px rgba(0, 0, 0, 0.7);
+    transition: all 0.25s ease;
   }
 
   .glass-card:hover {
-    border-color: hsl(var(--primary) / 0.3);
-    box-shadow: 
-      0 4px 6px -1px hsl(var(--lavender) / 0.1),
-      0 20px 50px -20px hsl(var(--lavender) / 0.2);
-    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 20px 44px -22px rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
   }
 
-  /* Floating Card Effect */
   .float-card {
     @apply relative bg-card rounded-2xl p-6;
     border: 1px solid hsl(var(--border));
-    box-shadow: 0 25px 50px -12px hsl(var(--lavender) / 0.15);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .float-card::before {
-    content: '';
-    @apply absolute top-2 left-2 w-2 h-2 rounded-full;
-    background: hsl(var(--lavender) / 0.4);
-  }
-
-  .float-card::after {
-    content: '';
-    @apply absolute top-2 left-5 w-2 h-2 rounded-full;
-    background: hsl(var(--purple-soft) / 0.4);
+    box-shadow: 0 26px 52px -28px rgba(0, 0, 0, 0.8);
   }
 
   /* Gradient Text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--purple-soft)));
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--foreground)),
+      hsl(var(--primary))
+    );
   }
 
-  /* Soft Button */
-  .btn-soft {
-    @apply relative px-6 py-3 font-medium rounded-xl transition-all duration-300;
-    background: hsl(var(--lavender-light));
-    color: hsl(var(--primary));
-  }
-
-  .btn-soft:hover {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.4);
-    transform: translateY(-2px);
-  }
-
-  /* Primary Button */
+  /* Buttons */
   .btn-primary {
-    @apply relative px-6 py-3 font-medium rounded-xl transition-all duration-300;
+    @apply px-6 py-3 rounded-xl font-medium transition-all;
     background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
   }
 
   .btn-primary:hover {
-    box-shadow: 0 15px 35px -10px hsl(var(--primary) / 0.5);
-    transform: translateY(-3px);
+    background: hsl(var(--lavender-dark));
+    transform: translateY(-1px);
   }
 
-  /* Outline Button */
+  .btn-soft {
+    @apply px-6 py-3 rounded-xl font-medium transition-all;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+  }
+
+  .btn-soft:hover {
+    color: hsl(var(--primary));
+  }
+
   .btn-outline {
-    @apply relative px-6 py-3 font-medium rounded-xl transition-all duration-300 bg-transparent;
-    border: 2px solid hsl(var(--border));
+    @apply px-6 py-3 rounded-xl font-medium bg-transparent transition-all;
+    border: 1.5px solid hsl(var(--border));
     color: hsl(var(--foreground));
   }
 
   .btn-outline:hover {
     border-color: hsl(var(--primary));
     color: hsl(var(--primary));
-    background: hsl(var(--lavender-light));
+    background: hsl(var(--primary) / 0.08);
   }
 
-  /* Skill Tag */
+  /* Skill Tags */
   .skill-tag {
-    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
-    background: hsl(var(--lavender-light));
-    color: hsl(var(--primary));
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all;
+    background: hsl(var(--secondary));
+    color: hsl(var(--muted-foreground));
+    border: 1px solid hsl(var(--border));
   }
 
   .skill-tag:hover {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    transform: scale(1.05);
+    color: hsl(var(--primary));
+    border-color: hsl(var(--primary));
   }
 
-  /* Section Badge */
   .section-badge {
     @apply inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
-    background: hsl(var(--lavender-light));
-    color: hsl(var(--primary));
-  }
-
-  /* Soft Shadow */
-  .shadow-soft {
-    box-shadow: 0 20px 60px -20px hsl(var(--lavender) / 0.25);
-  }
-
-  /* Glow Effect */
-  .glow-soft {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.2);
+    background: hsl(var(--secondary));
+    color: hsl(var(--muted-foreground));
+    border: 1px solid hsl(var(--border));
   }
 }
 
 @layer utilities {
-  /* Animation delays */
   .animation-delay-100 { animation-delay: 100ms; }
   .animation-delay-200 { animation-delay: 200ms; }
   .animation-delay-300 { animation-delay: 300ms; }
@@ -246,16 +175,10 @@
   }
 }
 
-/* Keyframe animations */
+/* Animations */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
@@ -264,14 +187,8 @@
 }
 
 @keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes float {
@@ -284,47 +201,14 @@
   50% { opacity: 1; }
 }
 
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 @keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-.animate-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 3s ease-in-out infinite;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
+.animate-fade-up { animation: fade-up 0.7s ease forwards; }
+.animate-fade-in { animation: fade-in 0.5s ease forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.6s ease forwards; }
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+.animate-scale-in { animation: scale-in 0.5s ease forwards; }

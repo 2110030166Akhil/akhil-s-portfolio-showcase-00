@@ -34,11 +34,9 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Soft gradient orbs */}
       <div className="absolute top-20 right-[10%] w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse-soft" />
       <div className="absolute bottom-20 left-[15%] w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-soft animation-delay-300" />
       
-      {/* Decorative dots */}
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float" />
       <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary/20 rounded-full animate-float animation-delay-200" />
       <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-primary/25 rounded-full animate-float animation-delay-400" />
@@ -48,12 +46,6 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="opacity-0 animate-fade-up">
-              <span className="section-badge inline-flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                Available for Opportunities
-              </span>
-            </div>
 
             {/* Main Heading */}
             <div className="space-y-4 opacity-0 animate-fade-up animation-delay-100">
